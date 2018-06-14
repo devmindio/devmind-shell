@@ -1,0 +1,339 @@
+/* import fonts */
+
+
+/* styling */
+* {
+	margin: 0px;
+	padding: 0px;
+	outline: none;
+	font-family: "Roboto", sans-serif;
+}
+
+body {
+	width: 100vw !important;
+	height: 100vh !important;
+	background: #0f141c;
+	position: relative;
+	overflow: hidden;
+}
+
+.logo {
+	float: left;
+	width: 80px;
+	height: 40px;
+	border-right: 1px solid #131a24;
+	background: center 10px no-repeat url(../img/devlogo.png);
+	background-size: 20px auto;
+}
+
+/* STYLES FOR THE HEADER */
+header, .bottom-toolbar {
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	background: #243145;
+	z-index: 2;
+}
+
+header ul {
+	user-select: none;
+	width: auto;
+	height: 40px;
+	display: inline-block;
+	list-style-type: none;
+	float: left;
+	padding-right: 25px;
+	border-right: 1px solid #131a24;
+}
+
+header ul > li {
+	float: left;
+	margin-top: 12px;
+	margin-left: 25px;
+	font-size: 13px;
+	color: #a8b8d0;
+	cursor: default;
+	transition: all 0.1s linear;
+	position: relative;
+}
+
+header ul > li:hover {
+	color: #FFF;
+}
+
+.submenu {
+	position: absolute;
+	width: 160px;
+	height: auto;
+	top: 20px;
+	left: 0px;
+	padding: 0px;
+	background: rgba(21,29,40,0.5);
+	border: 1px solid #151d28;
+}
+
+.submenu > li {
+	float: left;
+	margin: 0px;
+	width: 140px;
+	padding: 10px;
+}
+
+.submenu > li:hover {
+	background: #151d28;
+}
+
+.submenu > .divider {
+	width: 160px;
+	height: 1px;
+	background: #151d28;
+	float: left;
+	margin: 3px 0px;
+}
+
+ul > li > span {
+	font-size: 12px;
+	font-family: monospace;
+	float: right;
+}
+
+.file, .edit {
+	display: none;
+}
+
+
+/* STYLES FOT THE TABS SECTIONS */
+.tabs {
+	float: left;
+	width: 50%;
+	height: 30px;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.tab {
+	float: left;
+	width: 120px;
+	height: 28px;
+	background: transparent;
+	margin-left: 10px;
+	border-radius: 6px;
+	border: 1px solid #1f2b3c;
+}
+
+.tab:nth-child(1) {
+	margin-left: 0px;
+}
+
+.tab p {
+	cursor: default;
+	float: left;
+	margin-left: 10px;
+	margin-top: 7px;
+	font-size: 13px;
+	color: #a8b8d0;
+}
+
+.tab .closeTab {
+	cursor: pointer;
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin-top: 5px;
+	margin-right: 5px;
+	background: none;
+	border: none;
+	opacity: 0.45;
+	transition: all 0.1s linear;
+}
+
+.tab .closeTab:hover {
+	opacity: 1;
+}
+
+.tabs .active, .mobileTabs .active {
+	border: 1px solid #12141C;
+	background: #12141C;
+}
+
+/* STYLES FOR TOOLS SECTION */
+.toolTrigger, .tabsIndex {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	right: 10px;
+	bottom: 32px;
+	border: none;
+	border-radius: 100%;
+	cursor: pointer;
+	background: #4080FF;
+	transition: all 0.1s linear;
+	z-index: 4;
+}
+
+.tools .tool:hover, .toolTrigger:hover, .tabsIndex:hover {
+	background: #60c4ff;
+}
+
+.tabsIndex {
+	display: none;
+	right: 70px;
+}
+
+.tools {
+	position: absolute;
+	bottom: 90px;
+	right: 10px;
+	width: 50px;
+	height: auto;
+	z-index: 4;
+}
+
+.tools .tool {
+	width: 36px;
+	height: 36px;
+	border: none;
+	background: #4080FF;
+	border-radius: 100%;
+	margin-top: 6px;
+	margin-left: 7px;
+	cursor: pointer;
+	display: none;
+	transition: all 0.1s linear;
+}
+
+.toolFrame {
+	position: absolute;
+	right: -281px;
+	bottom: 85px;
+	width: 280px;
+	height: 180px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: rgba(21,29,40,0.5);;
+	border: 1px solid #243145;
+	transition: all 0.1s linear;
+	opacity: 0;
+	z-index: 5;
+}
+
+.toolActive {
+	right: -1px;
+	opacity: 1;
+}
+
+
+/* STYLES FOR THE EDITOR CONTAINER */
+.editor {
+	position: absolute;
+	width: 100vw;
+	height: calc(100vh - 60px);
+	background: #0f141c;
+	top: 40px;
+	right: 0px;
+	z-index: 1;
+}
+
+.bottom-toolbar {
+	height: 20px;
+	bottom: 0px;
+}
+
+.bottom-toolbar .FileInfo {
+	float: left;
+	margin-left: 10px;
+	margin-top: 2px;
+	font-size: 0.75em;
+	color: #a8b8d0;
+	cursor: default;
+}
+
+/* Mobile Specific Elements */
+.mobileTabs {
+	width: 100vw;
+	height: 50vh;
+	position: absolute;
+	background: #2b3046;
+	bottom: 21px;
+	left: 0px;
+	z-index: 9999;
+	padding: 20px 0px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: none;
+}
+
+.mobileTabs .tab {
+	float: left;
+	width: 90%;
+	height: 40px;
+	margin-left: 5%;
+	margin-bottom: 8px;
+}
+
+.mobileTabs .tab p {
+	margin-top: 9px;
+}
+
+.mobileTabs .tab .closeTab {
+	margin-top: 11px;
+}
+
+.mobileMenu {
+	position: absolute;
+	width: 50px;
+	height: 45px;
+	right: 10px;
+	top: 0px;
+	border: none;
+	border-bottom: 1px solid #2b3046;
+	background: none;
+	display: none;
+}
+
+.mobileMenu:hover {
+	background: #12141C;
+}
+
+nav {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 9998;
+	display: none;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+nav > ul {
+	position: absolute;
+	width: 80%;
+	height: 70vh;
+	top: 10vh;
+	left: 10%;
+	background: #FFF;
+	border-radius: 3px;
+	list-style-type: none;
+}
+
+.mobileLI {
+	width: calc(100% - 10px);
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 5px;
+	vertical-align: center; 
+	text-align: center;
+	background: #222;
+}
+
+/* Responsivity Parameters */
+@media screen and (max-width: 770px) {
+	.tabsIndex, .mobileMenu {
+		display: block;
+	}
+	
+	.tabs, header > ul {
+		display: none;
+	}
+}
