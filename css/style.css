@@ -233,6 +233,7 @@ ul > li > span {
 	top: 40px;
 	right: 0px;
 	z-index: 1;
+	overflow-x: hidden;
 }
 
 .bottom-toolbar {
